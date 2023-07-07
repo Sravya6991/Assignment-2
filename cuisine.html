@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/cuisine.css"/>
+    <link rel="stylesheet" href="./styles/media1.css"/>
+    <title>Cuisine</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand">
+            <div class="container-fluid justify-content-end" id="cusinie-header">
+                <a href="index.html" id="res-logo" class="navbar-brand" style="text-decoration: none;">
+                    e!
+                </a>
+                <ul class="navbar-nav align-items-center me-lg-5">
+                    <li class="nav-item login me-3">
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#login" aria-hidden="true">
+                            Login
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="acctbtn btn" data-bs-toggle="modal" data-bs-target="#acctbtn">
+                            Create an account
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            
+        </nav>
+    </header>
+
+    <!-- modal login trigger -->
+    <div class="modal fade" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column w-75 mx-auto" style="height: 150px;">
+                    <button class="btn btn-outline-secondary mb-3">
+                        <i class="fa-regular fa-envelope" style="color: #de1231;"></i>
+                        &nbsp;
+                        Continue with gmail
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                        <i class="fa-brands fa-facebook" style="color: #18428c;"></i>
+                        &nbsp;
+                        Continue with facebook
+                    </button>
+                </div>
+                <div class="modal-footer mx-auto">
+                    <p>Don't you have an account?
+                        <button data-bs-toggle="modal" data-bs-target="#acctbtn" class="btn text-danger">Sign up</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal acctbtn  -->
+    <div class="modal fade" id="acctbtn">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign up</h4>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column w-75 mx-auto" style="height: 150px;">
+                    <button class="btn btn-outline-secondary mb-3">
+                        <i class="fa-regular fa-envelope" style="color: #de1231;"></i>
+                        &nbsp;
+                        Continue with gmail
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                        <i class="fa-brands fa-facebook" style="color: #18428c;"></i>
+                        &nbsp;
+                        Continue with facebook
+                    </button>
+                </div>
+                <div class="modal-footer mx-auto">
+                    <p>Already had an account?
+                        <button class="btn text-danger" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="fs-2 cuisine-h1 ">Breakfast Places in Mumbai</h1>
+    
+    <main class="container d-lg-flex mb-4">
+        <p id="filter-btn" class="container d-lg-none">
+            <span class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-filter" aria-controls="collapse-filter">
+                Filter/Sort
+            </span>
+        </p>
+        <section class="filter-section p-1 collapse d-lg-block" id="collapse-filter">
+            <h2 class="p-0 fw-semibold">Filters</h2>
+            <h3 class="p-0">Select Location</h3>
+            <select class="form-select mx-auto w-75 my-2">
+                <option>Select Location</option>
+            </select>
+
+            <div class="cuisine">
+                <h3>Cusine</h3>
+                <div class="checkbox-wrapper">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="ni" name="cuisine" value="north-indian"/>
+                        <label for="ni" class="form-check-label">North Indian</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="si" name="cuisine" value="south-indian"/>
+                        <label for="si" class="form-check-label">South Indian</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="chinese" name="cuisine" value="chinese"/>
+                        <label for="chinese" class="form-check-label">Chinese</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="ff" name="cuisine" value="fast-food"/>
+                        <label for="ff" class="form-check-label">Fast Food</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="sf" name="cuisine" value="street-food"/>
+                        <label for="sfi" class="form-check-label">Street Food</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost">
+                <h3>Cost For Two</h3>
+                <div class="radio-wrapper">
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="lt500" name="cost" value="500"/>
+                        <label for="lt500" class="form-check-label">Less than 500</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="5to1k" class="form-check-input" name="cost" value="500-to-1000"/>
+                        <label for="5to1k" class="form-check-label">500 to 1000</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="1kto15" class="form-check-input" name="cost" value="1000-to-1500"/>
+                        <label for="1kto15" class="form-check-label">1000 to 1500</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="15to2k" name="cost" value="1500-to-2000"/>
+                        <label for="15to2k" class="form-check-label">1500 to 2000</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="abv2k" name="cost" value="2000"/>
+                        <label for="abv2k" class="form-check-label">2000+</label>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="p-0 fw-semibold">Sort</h2>
+            <div class="radio-wrapper">
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="lowtohg" name="sort" value="low-to-high"/>
+                    <label for="lowtohg" class="form-check-label">Price low to high</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="hgtolow" name="sort" value="high-to-low"/>
+                    <label for="hgtolow" class="form-check-label">Price high to low</label>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section m-0 m-lg-3">
+            <div class="card mb-4">
+                <a href="restuarant.html" style="text-decoration: none;">
+                    <div class="row mx-auto justify-content-start">
+                        <div class="col-12">
+                            <div class="row text-left justify-content-between gx-0">
+                                <div class="col-3">
+                                    <div class="text-center card-content">
+                                        <img 
+                                            class="rounded-5 mt-3"
+                                            src="images/shutterstock_351721442.png" 
+                                            alt="breakfast image" 
+                                            width="120px" height="120px"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-8 card-content">
+                                    <h1 class="h1 card-content-h1 fw-bold ms-1 mt-4">The Big Chill Cakery</h1>
+                                    <h5 class="fw-semibold ms-1">FORT</h5>
+                                    <p class="m-1 p-1">Shop 1, Plot D, Samrudhhi Complex, Chinchali ...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hr"/>
+                        <div class="col-12 mt-2 w-50">
+                            <table class="table table-borderless mx-4">
+                                <tbody>
+                                    <tr>
+                                        <td class="heading">CUISINES:</td>
+                                        <td class="fw-semibold cuisine-body">Bakery</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="heading">COST FOR TWO</td>
+                                        <td class="fw-semibold cuisine-body"><span>&#8377;</span>700</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="restuarant.html" style="text-decoration: none;">
+                    <div class="row mx-auto justify-content-start">
+                        <div class="col-12">
+                            <div class="row text-left justify-content-between gx-0">
+                                <div class="col-3">
+                                    <div class="text-center card-content">
+                                        <img 
+                                            class="rounded-5 mt-3"
+                                            src="images/shutterstock_351721442.png" 
+                                            alt="breakfast image" 
+                                            width="120px" height="120px"
+                                            />
+                                    </div>
+                                </div>
+                                <div class="col-8 card-content">
+                                    <h1 class="h1 card-content-h1 fw-bold m-0 mt-4">The Big Chill Cakery</h1>
+                                    <h5 class="fw-semibold">FORT</h5>
+                                    <p>Shop 1, Plot D, Samrudhhi Complex, Chinchali ...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hr"/>
+                        <div class="col-12 mt-2 w-50">
+                            <table class="table table-borderless mx-4">
+                                <tbody>
+                                    <tr>
+                                        <td class="heading">CUISINES:</td>
+                                        <td class="fw-semibold cuisine-body">Bakery</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="heading">COST FOR TWO</td>
+                                        <td class="fw-semibold cuisine-body"><span>&#8377;</span>700</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <nav aria-label="page-navigation" class="mb-4" id="pagination">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a href="#" class="page-link">&lt;</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">1</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">2</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">3</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">4</a>
+            </li>
+            <li class="page-item">
+                <a href="#" class="page-link">&gt;</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
